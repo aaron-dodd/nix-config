@@ -1,8 +1,6 @@
 # This file defines overlays
 { inputs, ... }:
 {
-  nur = inputs.nur.overlay;
-
   # This one brings our custom packages from the 'packages' directory
   additions = final: _prev: import ../packages { pkgs = final; };
 
@@ -32,5 +30,11 @@
       config.allowUnfree = true;
     };
   };
+
+  # Emacs overlay
+  emacs-overlay = inputs.emacs-overlay.overlay;
+
+  # Nix User Repository
+  nur = inputs.nur.overlay;
 }
 
