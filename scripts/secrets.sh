@@ -9,8 +9,8 @@ TARGET_ENVIRONMENT="${2:-hosts}"
 TARGET_MACHINE="${3:-$(hostname)}"
 
 if [[ "$TARGET_OPTION" == "updatekeys" ]]; then
-  sops updatekeys "secrets/$TARGET_ENVIRONMENT/$TARGET_MACHINE/secrets.yaml"
+    sops updatekeys "secrets/$TARGET_ENVIRONMENT/$TARGET_MACHINE/secrets.yaml"
 elif [[ "$TARGET_OPTION" == "edit" ]]; then
-  sops "secrets/$TARGET_ENVIRONMENT/$TARGET_MACHINE/secrets.yaml"
+    sops "secrets/$TARGET_ENVIRONMENT/$TARGET_MACHINE/secrets.yaml"
 fi
 
